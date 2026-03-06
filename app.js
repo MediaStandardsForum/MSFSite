@@ -185,7 +185,7 @@
               <span class="welcome-step-number">4</span>
               <div>
                 <strong>File with the Media Council</strong>
-                <p>Once the publisher has responded (or 10 working days have passed), follow the filing instructions to submit your complaint to the NZ Media Council.</p>
+                <p>Once the publisher has responded (or 10 working days have passed), follow the filing instructions to submit your complaint to the <a href="https://www.mediacouncil.org.nz/complaints" target="_blank" rel="noopener">NZ Media Council</a>.</p>
               </div>
             </div>
           </div>
