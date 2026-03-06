@@ -1,1 +1,16 @@
 node_modules/
+.venv/
+__pycache__/
+.claude/
+Complaint Docx/
+pdfs/
+specs/
+process_complaint.py
+generate-pdfs.js
+capture-thumbnail.js
+test_site.py
+package.json
+package-lock.json
+Prompt.md
+complaint-process.md
+*.docx
