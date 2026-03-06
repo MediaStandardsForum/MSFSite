@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Standards Forum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-bar">
+      <h1 class="site-title">Media Standards Forum</h1>
+      <img src="images/Logo.jpg" alt="MSF" class="site-logo">
+    </div>
+  </header>
+
+  <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span class="hamburger"></span>
+  </button>
+
+  <aside class="sidebar">
+    <div class="sidebar-banner">
+      <img src="images/Header.png" alt="" class="sidebar-banner-image">
+    </div>
+    <div class="search-container">
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search complaints..."
+        aria-label="Search complaints"
+      >
+    </div>
+
+    <nav class="complaint-list" aria-label="Complaints">
+      <ul id="complaint-list"></ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div id="content-area">
+      <div class="welcome">
+        <h2>Welcome to Media Standards Forum</h2>
+        <p>This site publishes analyses and rulings related to NZ Media Council cases.</p>
+        <p>Select a complaint from the sidebar to view its details, or use the search box to find specific cases.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

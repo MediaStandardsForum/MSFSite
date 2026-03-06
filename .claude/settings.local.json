@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(python -m http.server:*)",
+      "Bash(start http://localhost:8080)",
+      "Bash(curl:*)",
+      "Bash(code:*)",
+      "Bash(npx http-server:*)",
+      "Bash(python:*)",
+      "Bash(node:*)",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)",
+      "Bash(gh auth:*)"
+    ]
+  }
+}
