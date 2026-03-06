@@ -115,7 +115,8 @@
       const html = await response.text();
       contentArea.innerHTML = `
         <div class="pdf-download-bar">
-          <a href="downloads/${complaint.id}.zip" download class="pdf-download-btn">&#x2913; Download All Documents</a>
+          <a href="downloads/${complaint.id}.zip" download class="pdf-download-btn"><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 1a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 10.586V2a1 1 0 0 1 1-1zM3 14a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg> Download Complaint Files and Instructions</a>
+          <button onclick="openEmailModal('${complaint.id}')" class="pdf-download-btn"><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z"/></svg> Email Complaint Notice Template</button>
         </div>
         ${html}
       `;
@@ -151,9 +152,187 @@
     document.title = 'Media Standards Forum';
     contentArea.innerHTML = `
       <div class="welcome">
-        <h2>Welcome to Media Standards Forum</h2>
-        <p>This site publishes analyses and rulings related to NZ Media Council cases.</p>
-        <p>Select a complaint from the sidebar to view its details, or use the search box to find specific cases.</p>
+        <div class="welcome-section">
+          <h3>When a media outlet repeatedly fails its own standards, the public deserves a way to respond</h3>
+          <p>This site publishes detailed complaint analyses for articles that appear to breach the <a href="https://www.mediacouncil.org.nz/principles" target="_blank" rel="noopener">NZ Media Council Principles</a>. Each complaint is a ready-to-use template that anyone can file with the Media Council.</p>
+        </div>
+
+        <div class="welcome-section">
+          <h3>How it works</h3>
+          <div class="welcome-steps">
+            <div class="welcome-step">
+              <span class="welcome-step-number">1</span>
+              <div>
+                <strong>Choose an article</strong>
+                <p>Select a complaint from the sidebar. Each one analyses a published article against the Media Council Principles.</p>
+              </div>
+            </div>
+            <div class="welcome-step">
+              <span class="welcome-step-number">2</span>
+              <div>
+                <strong>Download complaint files and instructions</strong>
+                <p>Use the <em>Download Complaint Files and Instructions</em> button to get the formal Notice of Complaint, the full complaint document, and step-by-step filing instructions.</p>
+              </div>
+            </div>
+            <div class="welcome-step">
+              <span class="welcome-step-number">3</span>
+              <div>
+                <strong>Notify the publisher</strong>
+                <p>Use the <em>Email Complaint Notice Template</em> button to get a pre-written email you can send to the publisher. The Media Council requires you to contact the publisher first and allow 10 working days for a response.</p>
+              </div>
+            </div>
+            <div class="welcome-step">
+              <span class="welcome-step-number">4</span>
+              <div>
+                <strong>File with the Media Council</strong>
+                <p>Once the publisher has responded (or 10 working days have passed), follow the filing instructions to submit your complaint to the NZ Media Council.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="welcome-section welcome-cta">
+          <div class="welcome-step">
+            <span class="welcome-step-number welcome-step-arrow">\u2B60</span>
+            <div>
+              <strong>Get started</strong>
+                <p>Select a complaint from the sidebar.</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="welcome-divider">
+
+        <div class="welcome-section welcome-focus">
+          <h3>Why this site focuses on Crux News</h3>
+          <p>Most media organisations receive occasional complaints. Findings against a single outlet are rare. Repeated findings \u2014 serious enough to prompt the Council itself to question whether a publication can maintain the standards of journalism \u2014 are exceptional.</p>
+          <p>That is precisely what occurred with Crux News and its editor, Peter Newport.</p>
+          <blockquote class="welcome-quote">
+            <p>\u201cCrux has had a number of complaints upheld against it involving extreme statements of opinion about local politicians. Continued findings against Crux brings into question its ability to meet and maintain the required high standards.\u201d</p>
+            <cite>NZ MEDIA COUNCIL \u2014 CASE 3834 (2026)</cite>
+          </blockquote>
+          <p>This is the language of the Council itself \u2014 the body Crux voluntarily joined and agreed to be bound by. It is not the opinion of this site. It is the formal, published conclusion of thirteen independent experts appointed to uphold New Zealand\u2019s journalism standards.</p>
+          <p>A publication that continues to fall short of those standards, despite repeated rulings, warrants continued public scrutiny. That is why this site exists.</p>
+        </div>
+
+        <hr class="welcome-divider">
+
+        <div class="welcome-section">
+          <h3>NZ Media Council Rulings Against Crux News</h3>
+          <p>The NZ Media Council has ruled on Crux News in ten separate cases since 2020.</p>
+          <div class="rulings-grid">
+
+            <div class="ruling-card">
+
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/richard-thomas-against-crux-news/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3834 \u2014 Richard Thomas against Crux News</a>
+                <div class="ruling-card-meta">Upheld \u2014 Feb 2026 \u2014 Principles 1 &amp; 4</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cContinued findings against Crux brings into question its ability to meet and maintain the required high standards.\u201d</p>
+                  <p>\u201cThe statements are conclusory and no evidence is supplied.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/justin-wright-against-crux-news/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3816 \u2014 Justin Wright against Crux News</a>
+                <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4 (four articles), Principle 1</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cLabelling something as \u2018analysis\u2019 suggests a piece will contain a careful consideration of all the pertinent sides.\u201d</p>
+                  <p>\u201cClearly unfair\u201d to publish an election candidate\u2019s unchecked article \u201cin the middle of an election campaign with no reply from other candidates.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/barry-bruce-and-justin-wright-against-crux-news/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3804 \u2014 Barry Bruce and Justin Wright against Crux News</a>
+                <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cUsing a label such as \u2018analysis\u2019 does not give a licence to publish an article that says anything the writer likes.\u201d</p>
+                  <p>\u201cThis article has failed to clearly distinguish between fact and comment, and it has also fallen well short of meeting the \u2018highest professional standards\u2019 of journalism.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/andrew-tipene-against-crux-publishing/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3356 \u2014 Andrew Tipene against Crux Publishing</a>
+                <div class="ruling-card-meta">Upheld \u2014 Dec 2022 \u2014 Principles 1 &amp; 6</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cMr Tipene ought to have been given an opportunity to comment on this story before it was published.\u201d</p>
+                  <p>\u201cCrux must ensure that it meets journalistic standards.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux-publishing/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3338 \u2014 QLDC against Crux Publishing</a>
+                <div class="ruling-card-meta">Not Upheld \u2014 Oct 2022 \u2014 Principles 1, 4 &amp; 12</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cA clear distinction should be drawn between factual information and comment or opinion.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/jendi-paterson-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3012 \u2014 Jendi Paterson against Crux</a>
+                <div class="ruling-card-meta">Not Upheld \u2014 Mar 2021 \u2014 Principle 1</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cThe articles have been a consistent and vital journalistic attempt to understand the QLDC\u2019s use of consultants.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-airport-corporation-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2940 \u2014 Queenstown Airport Corporation against Crux</a>
+                <div class="ruling-card-meta">Upheld \u2014 Sep 2020 \u2014 Principles 1, 4 &amp; 6</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cBecause of its unsupported contentions\u2026 Crux is in breach of Media Council Principle 1.\u201d</p>
+                  <p>\u201cArticles that are essentially comment or opinion should be clearly presented as such.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux-2939/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2939 \u2014 QLDC against Crux</a>
+                <div class="ruling-card-meta">Partially Upheld \u2014 Sep 2020 \u2014 Principle 4</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cAssertion is not fact and while any journalist can report assertions of a source, Newport in these news stories is the journalist, not the source.\u201d</p>
+                  <p>\u201cReportage into local government is a vital part of a functioning democracy\u201d yet the publication \u201cover-reached and failed to uphold standards.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/jimmy-carling-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2895 \u2014 Jimmy Carling against Crux</a>
+                <div class="ruling-card-meta">Cautioned \u2014 May 2020 \u2014 Fact and comment separation</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cThe complaint is far from frivolous and should give Crux pause for thought in how it conducts itself online.\u201d</p>
+                  <p>\u201cIf Crux wants to keep writing stories like these\u2026 they would do better to clearly identify them.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ruling-card">
+              <div class="ruling-card-body">
+                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2891 \u2014 QLDC against Crux</a>
+                <div class="ruling-card-meta">Upheld \u2014 Mar 2020 \u2014 Principles 1 &amp; 4</div>
+                <div class="ruling-card-quotes">
+                  <p>\u201cReaders will be perplexed as to whether this article is a work of fact or comment.\u201d</p>
+                  <p>\u201cIt certainly lacks balance.\u201d</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     `;
   }
@@ -193,10 +372,6 @@
     const hash = window.location.hash.slice(1);
     if (hash && complaints.some(c => c.id === hash)) {
       loadComplaint(hash);
-    } else if (complaints.length > 0) {
-      // Load most recent complaint by default
-      loadComplaint(complaints[0].id);
-      window.location.hash = complaints[0].id;
     } else {
       showWelcome();
     }
@@ -255,6 +430,15 @@
       if (hash && hash !== currentComplaintId) {
         loadComplaint(hash);
       }
+    });
+
+    // Home links (header title + logo)
+    document.querySelectorAll('.site-home-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        history.pushState(null, '', window.location.pathname);
+        showWelcome();
+      });
     });
 
     // Mobile menu toggle
@@ -411,9 +595,6 @@
     const pubDate = new Date(complaint.date).toLocaleDateString('en-NZ', {
       day: 'numeric', month: 'long', year: 'numeric'
     });
-    const today = new Date().toLocaleDateString('en-NZ', {
-      day: 'numeric', month: 'long', year: 'numeric'
-    });
 
     const principlesHtml = (complaint.noticePrinciples || []).map((p, i) => `
       <div class="principle-block">
@@ -453,7 +634,6 @@
   </div>
 
   <div class="meta">
-    <p><span class="label">Date:</span> ${today}</p>
     <p><span class="label">To:</span> ${complaint.publisher}${complaint.publisherEmail ? ' &lt;' + complaint.publisherEmail + '&gt;' : ''}</p>
     <p><span class="label">Re:</span> &ldquo;${complaint.articleTitle}&rdquo;</p>
   </div>
@@ -475,14 +655,6 @@
   <h2>Remedy Sought</h2>
   <p>I request that ${complaint.publisher} acknowledge this complaint and provide a written response within 10 working days. If the concerns raised are accepted, I would ask that a correction or clarification be published.</p>
 
-  <div class="signature">
-    <p>Yours sincerely,</p>
-    <br>
-    <p>____________________________</p>
-    <p>[Your name]</p>
-    <p>[Your contact details]</p>
-    <p>${today}</p>
-  </div>
 </body>
 </html>`;
 
@@ -493,6 +665,106 @@
     win.print();
   }
 
+  const SITE_BASE = 'https://mediastandardsforum.github.io/MSFSite';
+
+  function openEmailModal(id) {
+    const complaint = complaints.find(c => c.id === id);
+    if (!complaint) return;
+
+    const pubDate = new Date(complaint.date).toLocaleDateString('en-NZ', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    });
+
+    const complaintUrl = `${SITE_BASE}/#${complaint.id}`;
+    const noticeFilename = `Notice_${complaint.articleTitle.replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim()}.pdf`;
+    const noticeUrl = `${SITE_BASE}/downloads/${complaint.id}/${encodeURIComponent(noticeFilename)}`;
+
+    const subject = `Notice of Complaint \u2014 ${complaint.articleTitle}`;
+
+    const body = `Dear Editor,
+
+I am writing to formally notify Crux News of a complaint concerning the following article:
+
+"${complaint.articleTitle}"
+Author: ${complaint.author}
+Published: ${pubDate}
+URL: ${complaint.articleUrl}
+
+It is my intention to lodge this complaint with the NZ Media Council if it is not resolved at the publication level. In accordance with the Media Council\u2019s complaints procedure, I am first providing Crux News with an opportunity to respond.
+
+The formal Notice of Complaint can be viewed at:
+${noticeUrl}
+
+The full complaint and principles alleged to be breached are detailed at:
+${complaintUrl}
+
+I request that Crux News acknowledge this complaint and provide a written response within 10 working days. If the concerns raised are accepted, I would ask that a correction or clarification be published.`;
+
+    // Remove any existing modal
+    const existing = document.querySelector('.email-modal-overlay');
+    if (existing) existing.remove();
+
+    const overlay = document.createElement('div');
+    overlay.className = 'email-modal-overlay';
+    overlay.innerHTML = `
+      <div class="email-modal">
+        <button class="email-modal-close">&times;</button>
+        <h2>Email Notice to Publisher</h2>
+        <p class="email-modal-intro">Copy each field into a new email in your email client.</p>
+        <div class="email-field">
+          <label>To</label>
+          <div class="email-field-row">
+            <input type="text" readonly value="editor@crux.org.nz">
+            <button class="email-copy-btn" data-field="to">Copy</button>
+          </div>
+        </div>
+        <div class="email-field">
+          <label>Subject</label>
+          <div class="email-field-row">
+            <input type="text" readonly value="${subject.replace(/"/g, '&quot;')}">
+            <button class="email-copy-btn" data-field="subject">Copy</button>
+          </div>
+        </div>
+        <div class="email-field">
+          <label>Body</label>
+          <div class="email-field-row email-field-row-body">
+            <textarea readonly rows="12">${body.replace(/</g, '&lt;')}</textarea>
+            <button class="email-copy-btn" data-field="body">Copy</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const copyValues = {
+      to: 'editor@crux.org.nz',
+      subject: subject,
+      body: body,
+    };
+
+    overlay.querySelectorAll('.email-copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(copyValues[btn.dataset.field]).then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    });
+
+    const closeModal = () => overlay.remove();
+    overlay.querySelector('.email-modal-close').addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function handler(e) {
+      if (e.key === 'Escape') { closeModal(); document.removeEventListener('keydown', handler); }
+    });
+  }
+
+  window.openEmailModal = openEmailModal;
   window.printInstructions = printInstructions;
   window.publisherNotice = publisherNotice;
 
