@@ -222,114 +222,93 @@
           <p>The NZ Media Council has ruled on Crux News in ten separate cases since 2020.</p>
           <div class="rulings-grid">
 
-            <div class="ruling-card">
-
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/richard-thomas-against-crux-news/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3834 \u2014 Richard Thomas against Crux News</a>
-                <div class="ruling-card-meta">Upheld \u2014 Feb 2026 \u2014 Principles 1 &amp; 4</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cContinued findings against Crux brings into question its ability to meet and maintain the required high standards.\u201d</p>
-                  <p>\u201cThe statements are conclusory and no evidence is supplied.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/richard-thomas-against-crux-news/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 3834 \u2014 Richard Thomas against Crux News</div>
+              <div class="ruling-card-meta">Upheld \u2014 Feb 2026 \u2014 Principles 1 &amp; 4</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cContinued findings against Crux brings into question its ability to meet and maintain the required high standards.\u201d</p>
+                <p>\u201cThe statements are conclusory and no evidence is supplied.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/justin-wright-against-crux-news/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3816 \u2014 Justin Wright against Crux News</a>
-                <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4 (four articles), Principle 1</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cLabelling something as \u2018analysis\u2019 suggests a piece will contain a careful consideration of all the pertinent sides.\u201d</p>
-                  <p>\u201cClearly unfair\u201d to publish an election candidate\u2019s unchecked article \u201cin the middle of an election campaign with no reply from other candidates.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/justin-wright-against-crux-news/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 3816 \u2014 Justin Wright against Crux News</div>
+              <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4 (four articles), Principle 1</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cLabelling something as \u2018analysis\u2019 suggests a piece will contain a careful consideration of all the pertinent sides.\u201d</p>
+                <p>\u201cClearly unfair\u201d to publish an election candidate\u2019s unchecked article \u201cin the middle of an election campaign with no reply from other candidates.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/barry-bruce-and-justin-wright-against-crux-news/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3804 \u2014 Barry Bruce and Justin Wright against Crux News</a>
-                <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cUsing a label such as \u2018analysis\u2019 does not give a licence to publish an article that says anything the writer likes.\u201d</p>
-                  <p>\u201cThis article has failed to clearly distinguish between fact and comment, and it has also fallen well short of meeting the \u2018highest professional standards\u2019 of journalism.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/barry-bruce-and-justin-wright-against-crux-news/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 3804 \u2014 Barry Bruce and Justin Wright against Crux News</div>
+              <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cUsing a label such as \u2018analysis\u2019 does not give a licence to publish an article that says anything the writer likes.\u201d</p>
+                <p>\u201cThis article has failed to clearly distinguish between fact and comment, and it has also fallen well short of meeting the \u2018highest professional standards\u2019 of journalism.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/andrew-tipene-against-crux-publishing/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3356 \u2014 Andrew Tipene against Crux Publishing</a>
-                <div class="ruling-card-meta">Upheld \u2014 Dec 2022 \u2014 Principles 1 &amp; 6</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cMr Tipene ought to have been given an opportunity to comment on this story before it was published.\u201d</p>
-                  <p>\u201cCrux must ensure that it meets journalistic standards.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/andrew-tipene-against-crux-publishing/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 3356 \u2014 Andrew Tipene against Crux Publishing</div>
+              <div class="ruling-card-meta">Upheld \u2014 Dec 2022 \u2014 Principles 1 &amp; 6</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cMr Tipene ought to have been given an opportunity to comment on this story before it was published.\u201d</p>
+                <p>\u201cCrux must ensure that it meets journalistic standards.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux-publishing/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3338 \u2014 QLDC against Crux Publishing</a>
-                <div class="ruling-card-meta">Not Upheld \u2014 Oct 2022 \u2014 Principles 1, 4 &amp; 12</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cA clear distinction should be drawn between factual information and comment or opinion.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux-publishing/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 3338 \u2014 QLDC against Crux Publishing</div>
+              <div class="ruling-card-meta">Not Upheld \u2014 Oct 2022 \u2014 Principles 1, 4 &amp; 12</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cA clear distinction should be drawn between factual information and comment or opinion.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/jendi-paterson-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 3012 \u2014 Jendi Paterson against Crux</a>
-                <div class="ruling-card-meta">Not Upheld \u2014 Mar 2021 \u2014 Principle 1</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cThe articles have been a consistent and vital journalistic attempt to understand the QLDC\u2019s use of consultants.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/jendi-paterson-against-crux/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 3012 \u2014 Jendi Paterson against Crux</div>
+              <div class="ruling-card-meta">Not Upheld \u2014 Mar 2021 \u2014 Principle 1</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cThe articles have been a consistent and vital journalistic attempt to understand the QLDC\u2019s use of consultants.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-airport-corporation-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2940 \u2014 Queenstown Airport Corporation against Crux</a>
-                <div class="ruling-card-meta">Upheld \u2014 Sep 2020 \u2014 Principles 1, 4 &amp; 6</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cBecause of its unsupported contentions\u2026 Crux is in breach of Media Council Principle 1.\u201d</p>
-                  <p>\u201cArticles that are essentially comment or opinion should be clearly presented as such.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/queenstown-airport-corporation-against-crux/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 2940 \u2014 Queenstown Airport Corporation against Crux</div>
+              <div class="ruling-card-meta">Upheld \u2014 Sep 2020 \u2014 Principles 1, 4 &amp; 6</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cBecause of its unsupported contentions\u2026 Crux is in breach of Media Council Principle 1.\u201d</p>
+                <p>\u201cArticles that are essentially comment or opinion should be clearly presented as such.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux-2939/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2939 \u2014 QLDC against Crux</a>
-                <div class="ruling-card-meta">Partially Upheld \u2014 Sep 2020 \u2014 Principle 4</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cAssertion is not fact and while any journalist can report assertions of a source, Newport in these news stories is the journalist, not the source.\u201d</p>
-                  <p>\u201cReportage into local government is a vital part of a functioning democracy\u201d yet the publication \u201cover-reached and failed to uphold standards.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux-2939/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 2939 \u2014 QLDC against Crux</div>
+              <div class="ruling-card-meta">Partially Upheld \u2014 Sep 2020 \u2014 Principle 4</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cAssertion is not fact and while any journalist can report assertions of a source, Newport in these news stories is the journalist, not the source.\u201d</p>
+                <p>\u201cReportage into local government is a vital part of a functioning democracy\u201d yet the publication \u201cover-reached and failed to uphold standards.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/jimmy-carling-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2895 \u2014 Jimmy Carling against Crux</a>
-                <div class="ruling-card-meta">Cautioned \u2014 May 2020 \u2014 Fact and comment separation</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cThe complaint is far from frivolous and should give Crux pause for thought in how it conducts itself online.\u201d</p>
-                  <p>\u201cIf Crux wants to keep writing stories like these\u2026 they would do better to clearly identify them.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/jimmy-carling-against-crux/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 2895 \u2014 Jimmy Carling against Crux</div>
+              <div class="ruling-card-meta">Cautioned \u2014 May 2020 \u2014 Fact and comment separation</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cThe complaint is far from frivolous and should give Crux pause for thought in how it conducts itself online.\u201d</p>
+                <p>\u201cIf Crux wants to keep writing stories like these\u2026 they would do better to clearly identify them.\u201d</p>
               </div>
-            </div>
+            </a>
 
-            <div class="ruling-card">
-              <div class="ruling-card-body">
-                <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux/" target="_blank" rel="noopener" class="ruling-card-heading">Case 2891 \u2014 QLDC against Crux</a>
-                <div class="ruling-card-meta">Upheld \u2014 Mar 2020 \u2014 Principles 1 &amp; 4</div>
-                <div class="ruling-card-quotes">
-                  <p>\u201cReaders will be perplexed as to whether this article is a work of fact or comment.\u201d</p>
-                  <p>\u201cIt certainly lacks balance.\u201d</p>
-                </div>
+            <a href="https://www.mediacouncil.org.nz/rulings/queenstown-lakes-district-council-against-crux/" target="_blank" rel="noopener" class="ruling-card">
+              <div class="ruling-card-heading">Case 2891 \u2014 QLDC against Crux</div>
+              <div class="ruling-card-meta">Upheld \u2014 Mar 2020 \u2014 Principles 1 &amp; 4</div>
+              <div class="ruling-card-quotes">
+                <p>\u201cReaders will be perplexed as to whether this article is a work of fact or comment.\u201d</p>
+                <p>\u201cIt certainly lacks balance.\u201d</p>
               </div>
-            </div>
+            </a>
 
           </div>
         </div>
