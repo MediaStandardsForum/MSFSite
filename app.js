@@ -226,8 +226,9 @@
               <div class="ruling-card-heading">Case 3834 \u2014 Richard Thomas against Crux News</div>
               <div class="ruling-card-meta">Upheld \u2014 Feb 2026 \u2014 Principles 1 &amp; 4</div>
               <div class="ruling-card-quotes">
-                <p>\u201cContinued findings against Crux brings into question its ability to meet and maintain the required high standards.\u201d</p>
-                <p>\u201cThe statements are conclusory and no evidence is supplied.\u201d</p>
+                <p>\u201cThere is no actual analysis of facts or principles. The statements are conclusory and no evidence is supplied.\u201d</p>
+                <p>\u201cEven if this is treated as an Opinion column, that label is not a licence to make accusations without some established facts.\u201d</p>
+                <p>\u201cCrux has had a number of complaints upheld against it involving extreme statements of opinion about local politicians. Continued findings against Crux brings into question its ability to meet and maintain the required high standards.\u201d</p>
               </div>
             </a>
 
@@ -235,8 +236,12 @@
               <div class="ruling-card-heading">Case 3816 \u2014 Justin Wright against Crux News</div>
               <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4 (four articles), Principle 1</div>
               <div class="ruling-card-quotes">
-                <p>\u201cLabelling something as \u2018analysis\u2019 suggests a piece will contain a careful consideration of all the pertinent sides.\u201d</p>
-                <p>\u201cClearly unfair\u201d to publish an election candidate\u2019s unchecked article \u201cin the middle of an election campaign with no reply from other candidates.\u201d</p>
+                <p>\u201cReaders would be very uncertain as to whether what they were reading was a factual news story, or a piece of commentary drawn from the author\u2019s subjective analysis of a set of data.\u201d</p>
+                <p>\u201cLabelling something as \u2018analysis\u2019 suggests a piece will contain a careful consideration of all the pertinent sides of a discussion or event. At the very least it should contain an honest comment based on factual background.\u201d</p>
+                <p>\u201cGiving an election candidate an unchecked \u2018article\u2019 in the middle of an election campaign with no reply from other candidates is clearly unfair.\u201d</p>
+                <p>\u201cThe statement \u2026 inappropriately blurs the distinction between fact and comment. This appears to be an entirely speculative view.\u201d</p>
+                <p>\u201cThe article makes a number of claims about named individuals, and we consider it was unfair and unbalanced not to give them an opportunity to comment on the analysis of the data provided.\u201d</p>
+                <p>\u201cIt was unfair for Crux News to publish them without giving those criticised an opportunity to comment.\u201d</p>
               </div>
             </a>
 
@@ -244,8 +249,9 @@
               <div class="ruling-card-heading">Case 3804 \u2014 Barry Bruce and Justin Wright against Crux News</div>
               <div class="ruling-card-meta">Upheld \u2014 Dec 2025 \u2014 Principle 4</div>
               <div class="ruling-card-quotes">
-                <p>\u201cUsing a label such as \u2018analysis\u2019 does not give a licence to publish an article that says anything the writer likes.\u201d</p>
+                <p>\u201cUsing a label such as \u2018analysis\u2019 does not give a licence to publish an article that says anything the writer likes. An analysis or opinion tag signals perspective, not a free pass. These pieces must still be built on solid facts and presented in a responsible way. The label cannot be used to excuse unsupported claims or personal assertions that cannot be substantiated in the article and should not be used as a get-out-of-jail-free card to allow anything to be said without check.\u201d</p>
                 <p>\u201cThis article has failed to clearly distinguish between fact and comment, and it has also fallen well short of meeting the \u2018highest professional standards\u2019 of journalism.\u201d</p>
+                <p>\u201cThis article was confusing in that it blurred the lines between claimed fact and comment and could not be described as rigorous analysis.\u201d</p>
               </div>
             </a>
 
@@ -253,8 +259,9 @@
               <div class="ruling-card-heading">Case 3356 \u2014 Andrew Tipene against Crux Publishing</div>
               <div class="ruling-card-meta">Upheld \u2014 Dec 2022 \u2014 Principles 1 &amp; 6</div>
               <div class="ruling-card-quotes">
-                <p>\u201cMr Tipene ought to have been given an opportunity to comment on this story before it was published.\u201d</p>
-                <p>\u201cCrux must ensure that it meets journalistic standards.\u201d</p>
+                <p>\u201cAs we have previously noted in doing so Crux must ensure that it meets journalistic standards. The Council notes that it has previously been critical of Crux\u2019s conduct \u2026 We were therefore disappointed by Crux\u2019s conduct in relation to this complaint.\u201d</p>
+                <p>\u201cPublications should be bound at all times by accuracy, fairness and balance, and should not deliberately mislead or misinform readers by commission or omission.\u201d</p>
+                <p>\u201cThe Media Council has little difficulty in upholding the majority of this complaint.\u201d</p>
               </div>
             </a>
 
@@ -270,7 +277,9 @@
               <div class="ruling-card-heading">Case 3012 \u2014 Jendi Paterson against Crux</div>
               <div class="ruling-card-meta">Not Upheld \u2014 Mar 2021 \u2014 Principle 1</div>
               <div class="ruling-card-quotes">
-                <p>\u201cThe articles have been a consistent and vital journalistic attempt to understand the QLDC\u2019s use of consultants.\u201d</p>
+                <p>\u201cCrux\u2019s reporting has repeatedly crossed the line, especially in its failure to separate fact and comment.\u201d</p>
+                <p>\u201cMost concerning is Crux\u2019s inaccurate reporting \u2026 It seems Crux made assumptions, which is another example of the sometimes sloppy reporting by Crux in this matter.\u201d</p>
+                <p>\u201cAs we have said in some of those past rulings, a close look at these complaints has not reflected well on either side \u2026 Crux\u2019s reporting has repeatedly crossed the line, especially in its failure to separate fact and comment.\u201d</p>
               </div>
             </a>
 
@@ -278,8 +287,8 @@
               <div class="ruling-card-heading">Case 2940 \u2014 Queenstown Airport Corporation against Crux</div>
               <div class="ruling-card-meta">Upheld \u2014 Sep 2020 \u2014 Principles 1, 4 &amp; 6</div>
               <div class="ruling-card-quotes">
-                <p>\u201cBecause of its unsupported contentions\u2026 Crux is in breach of Media Council Principle 1.\u201d</p>
-                <p>\u201cArticles that are essentially comment or opinion should be clearly presented as such.\u201d</p>
+                <p>\u201cCrux has misrepresented opinion as material facts and has reported without accuracy, fairness and balance.\u201d</p>
+                <p>\u201cThis was a breach of Principle 4 (Comment and Fact) which states a clear distinction should be drawn between factual information and comment or opinion.\u201d</p>
               </div>
             </a>
 
@@ -287,17 +296,19 @@
               <div class="ruling-card-heading">Case 2939 \u2014 QLDC against Crux</div>
               <div class="ruling-card-meta">Partially Upheld \u2014 Sep 2020 \u2014 Principle 4</div>
               <div class="ruling-card-quotes">
+                <p>\u201cNewport employs an unusual style of reportage \u2026 a type of advocacy journalism, but he needs to be careful in his blurring of the lines between fact and opinion.\u201d</p>
                 <p>\u201cAssertion is not fact and while any journalist can report assertions of a source, Newport in these news stories is the journalist, not the source.\u201d</p>
-                <p>\u201cReportage into local government is a vital part of a functioning democracy\u201d yet the publication \u201cover-reached and failed to uphold standards.\u201d</p>
+                <p>\u201cThe Council would repeat the advice that it is problematic for any reportage to be littered with wording such as \u2018appears\u2019, \u2018might\u2019, and \u2018seems\u2019. Assertion is not evidence.\u201d</p>
               </div>
             </a>
 
             <a href="https://www.mediacouncil.org.nz/rulings/jimmy-carling-against-crux/" target="_blank" rel="noopener" class="ruling-card">
               <div class="ruling-card-heading">Case 2895 \u2014 Jimmy Carling against Crux</div>
-              <div class="ruling-card-meta">Cautioned \u2014 May 2020 \u2014 Fact and comment separation</div>
+              <div class="ruling-card-meta">Not Upheld, Cautioned \u2014 May 2020 \u2014 Fact and comment separation</div>
               <div class="ruling-card-quotes">
-                <p>\u201cThe complaint is far from frivolous and should give Crux pause for thought in how it conducts itself online.\u201d</p>
-                <p>\u201cIf Crux wants to keep writing stories like these\u2026 they would do better to clearly identify them.\u201d</p>
+                <p>\u201cThe article overall is a mix of comment and fact that blurs the line between the two.\u201d</p>
+                <p>\u201cThe complaint is far from frivolous and should give Crux pause for thought in how it conducts itself online and distinguishes between fact and comment. The Council considered upholding the complaint due to the amount of opinion liberally sprinkled through a story that was presented as news.\u201d</p>
+                <p>\u201cIf Crux wants to keep writing stories like these using first person narrative and the writer\u2019s opinions, they would do better to clearly identify them to readers as opinion, as per Principle 4. We strongly suggest Crux take greater care in the future.\u201d</p>
               </div>
             </a>
 
@@ -305,8 +316,9 @@
               <div class="ruling-card-heading">Case 2891 \u2014 QLDC against Crux</div>
               <div class="ruling-card-meta">Upheld \u2014 Mar 2020 \u2014 Principles 1 &amp; 4</div>
               <div class="ruling-card-quotes">
-                <p>\u201cReaders will be perplexed as to whether this article is a work of fact or comment.\u201d</p>
-                <p>\u201cIt certainly lacks balance.\u201d</p>
+                <p>\u201cReaders will be perplexed as to whether this article is a work of fact or comment; it reads as a collision of both without clear labelling.\u201d</p>
+                <p>\u201cIt is impossible to tell if the story is accurate or not \u2013 something that might have given Crux pause before publishing \u2013 but it certainly lacks balance.\u201d</p>
+                <p>\u201cNewport himself says Crux is \u2018consistently opinionated\u2019.\u201d</p>
               </div>
             </a>
 
