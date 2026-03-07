@@ -833,15 +833,33 @@ I request that ${complaint.publisher} acknowledge this complaint and provide a w
     notifyBtn.addEventListener('click', () => {
       const name = nameInput.value.trim();
       if (!name) return;
-      if (window.formbricks) {
-        formbricks.setAttribute('name', name);
-        formbricks.track('complaint-notification', { article: complaint.id, articleTitle: complaint.articleTitle });
-      }
-      if (window.umami) umami.track('notify-msf', { complaint: complaint.id, name: name });
-      notifyBtn.textContent = 'Sent!';
-      notifyBtn.classList.add('copied');
+      notifyBtn.textContent = 'Sending...';
       notifyBtn.disabled = true;
-      nameInput.disabled = true;
+      fetch('https://app.formbricks.com/api/v1/client/cmmgsrc554dcqru01gaovf6uw/responses', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          surveyId: 'cmmgtfeaj3vhfry01rkm1haw3',
+          finished: true,
+          data: {
+            x9lslo742a8cqhsi9ym6b9iv: name,
+            ih7g7bo20s8eisbfqv4libnf: complaint.articleTitle + ' (' + complaint.id + ')'
+          }
+        })
+      }).then(r => r.json()).then(res => {
+        if (res.data && res.data.id) {
+          notifyBtn.textContent = 'Sent!';
+          notifyBtn.classList.add('copied');
+          nameInput.disabled = true;
+        } else {
+          notifyBtn.textContent = 'Failed';
+          notifyBtn.disabled = false;
+        }
+      }).catch(() => {
+        notifyBtn.textContent = 'Failed';
+        notifyBtn.disabled = false;
+      });
+      if (window.umami) umami.track('notify-msf', { complaint: complaint.id });
     });
 
     const closeModal = () => {
