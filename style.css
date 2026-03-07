@@ -698,44 +698,26 @@ body {
 }
 
 /* Sidebar CTA */
-.sidebar-cta {
-  display: flex;
+.sidebar-cta-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-}
-
-.sidebar-cta-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  min-width: 28px;
-  border-radius: 50%;
-  background-color: #1e3050;
-  color: #ffffff;
-  font-weight: 700;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
   font-size: 0.8rem;
   font-family: var(--font-sans);
-  animation: number-pulse 2s ease-in-out infinite;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #1e3050;
+  border: 1.5px solid #1e3050;
+  border-radius: 4px;
 }
 
-@keyframes number-pulse {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+.sidebar-cta-btn.faded {
+  opacity: 0.35;
 }
 
-.sidebar-cta-text {
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: var(--font-sans);
-  color: #1e3050;
-}
-
-.sidebar-cta-number.faded,
-.sidebar-cta-text.faded {
-  opacity: 0.3;
-  animation: none;
+#sidebar-cta .sidebar-cta-btn {
+  margin-top: 2px;
 }
 
 /* Button step numbers */
@@ -792,6 +774,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: -1rem;
   margin-bottom: 1.25rem;
 }
 

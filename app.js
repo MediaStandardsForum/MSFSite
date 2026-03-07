@@ -107,7 +107,7 @@
     updateActiveState();
 
     // Show faded "Select" step, hide CTA
-    sidebarCta.innerHTML = `<div class="sidebar-cta"><span class="sidebar-cta-number faded">1</span><span class="sidebar-cta-text faded">Select</span></div>`;
+    sidebarCta.innerHTML = `<div class="sidebar-cta-btn faded"><span class="btn-step-number">1</span> Select article below</div>`;
     sidebarCta.classList.remove('search-hidden');
     searchContainer.classList.add('search-hidden');
 
