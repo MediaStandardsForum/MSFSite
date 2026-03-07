@@ -49,6 +49,8 @@
       <li>
         <a href="#${complaint.id}"
            data-id="${complaint.id}"
+           data-umami-event="select-complaint"
+           data-umami-event-complaint="${complaint.id}"
            class="${complaint.id === currentComplaintId ? 'active' : ''}">
           <div class="complaint-card">
             ${complaint.thumbnail ? `<img src="${complaint.thumbnail}" alt="" class="complaint-thumbnail" onerror="this.style.display='none'">` : ''}
@@ -124,9 +126,9 @@
       const complaintPdf = `downloads/${complaint.id}/Complaint_${safeTitle}.pdf`;
       contentArea.innerHTML = `
         <div class="pdf-download-bar">
-          <button onclick="openEmailModal('${complaint.id}')" class="pdf-download-btn"><span class="btn-step-number pulse-step">2</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z"/></svg> Email Notice to Publisher</button>
-          <a href="${encodeURI(complaintPdf)}" download class="pdf-download-btn"><span class="btn-step-number">3</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 1a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 10.586V2a1 1 0 0 1 1-1zM3 14a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg> Download Complaint</a>
-          <button onclick="printInstructions('${complaint.id}')" class="pdf-download-btn"><span class="btn-step-number">4</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2H9zM4 5a2 2 0 0 1 2-2 3 3 0 0 0 3 3h2a3 3 0 0 0 3-3 2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm5.707 4.293a1 1 0 0 0-1.414 1.414L9.586 12l-1.293 1.293a1 1 0 1 0 1.414 1.414L11 13.414l1.293 1.293a1 1 0 0 0 1.414-1.414L12.414 12l1.293-1.293a1 1 0 0 0-1.414-1.414L11 10.586l-1.293-1.293z"/></svg> Filing Instructions</button>
+          <button onclick="openEmailModal('${complaint.id}')" class="pdf-download-btn" data-umami-event="email-notice" data-umami-event-complaint="${complaint.id}"><span class="btn-step-number pulse-step">2</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z"/></svg> Email Notice to Publisher</button>
+          <a href="${encodeURI(complaintPdf)}" download class="pdf-download-btn" data-umami-event="download-complaint" data-umami-event-complaint="${complaint.id}"><span class="btn-step-number">3</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 1a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 10.586V2a1 1 0 0 1 1-1zM3 14a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg> Download Complaint</a>
+          <button onclick="printInstructions('${complaint.id}')" class="pdf-download-btn" data-umami-event="filing-instructions" data-umami-event-complaint="${complaint.id}"><span class="btn-step-number">4</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2H9zM4 5a2 2 0 0 1 2-2 3 3 0 0 0 3 3h2a3 3 0 0 0 3-3 2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm5.707 4.293a1 1 0 0 0-1.414 1.414L9.586 12l-1.293 1.293a1 1 0 1 0 1.414 1.414L11 13.414l1.293 1.293a1 1 0 0 0 1.414-1.414L12.414 12l1.293-1.293a1 1 0 0 0-1.414-1.414L11 10.586l-1.293-1.293z"/></svg> Filing Instructions</button>
         </div>
         <h1 class="complaint-page-title">New Zealand Media Council Complaint</h1>
         ${html}
