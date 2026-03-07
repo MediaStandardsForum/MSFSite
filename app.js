@@ -720,21 +720,22 @@
     });
 
     const complaintUrl = `${SITE_BASE}/#${complaint.id}`;
-    const noticeFilename = `Notice_${complaint.articleTitle.replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim()}.pdf`;
+    const noticeFilename = `Notice_${complaint.articleTitle.replace(/[\u2018\u2019\u201C\u201D]/g, "'").replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim()}.pdf`;
     const noticeUrl = `${SITE_BASE}/downloads/${complaint.id}/${encodeURIComponent(noticeFilename)}`;
 
+    const toEmail = complaint.publisherEmail || 'editor@crux.org.nz';
     const subject = `Notice of Complaint \u2014 ${complaint.articleTitle}`;
 
     const body = `Dear Editor,
 
-I am writing to formally notify Crux News of a complaint concerning the following article:
+I am writing to formally notify ${complaint.publisher} of a complaint concerning the following article:
 
 "${complaint.articleTitle}"
 Author: ${complaint.author}
 Published: ${pubDate}
 URL: ${complaint.articleUrl}
 
-It is my intention to lodge this complaint with the NZ Media Council if it is not resolved at the publication level. In accordance with the Media Council\u2019s complaints procedure, I am first providing Crux News with an opportunity to respond.
+It is my intention to lodge this complaint with the NZ Media Council if it is not resolved at the publication level. In accordance with the Media Council\u2019s complaints procedure, I am first providing ${complaint.publisher} with an opportunity to respond.
 
 The formal Notice of Complaint can be viewed at:
 ${noticeUrl}
@@ -742,7 +743,7 @@ ${noticeUrl}
 The full complaint and principles alleged to be breached are detailed at:
 ${complaintUrl}
 
-I request that Crux News acknowledge this complaint and provide a written response within 10 working days. If the concerns raised are accepted, I would ask that a correction or clarification be published.`;
+I request that ${complaint.publisher} acknowledge this complaint and provide a written response within 10 working days. If the concerns raised are accepted, I would ask that a correction or clarification be published.`;
 
     // Remove any existing modal
     const existing = document.querySelector('.email-modal-overlay');
@@ -758,7 +759,7 @@ I request that Crux News acknowledge this complaint and provide a written respon
         <div class="email-field">
           <label>To</label>
           <div class="email-field-row">
-            <input type="text" readonly value="editor@crux.org.nz">
+            <input type="text" readonly value="${toEmail}">
             <button class="email-copy-btn" data-field="to">Copy</button>
           </div>
         </div>
@@ -782,7 +783,7 @@ I request that Crux News acknowledge this complaint and provide a written respon
     document.body.appendChild(overlay);
 
     const copyValues = {
-      to: 'editor@crux.org.nz',
+      to: toEmail,
       subject: subject,
       body: body,
     };
