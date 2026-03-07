@@ -138,8 +138,8 @@
         downloadBtn.addEventListener('click', () => {
           downloadBtn.classList.add('btn-used');
           document.querySelectorAll('.btn-step-number.pulse-step').forEach(el => el.classList.remove('pulse-step'));
-          const stepNums = document.querySelectorAll('.btn-step-number');
-          if (stepNums[2]) stepNums[2].classList.add('pulse-step');
+          const barSteps = contentArea.querySelectorAll('.pdf-download-bar .btn-step-number');
+          if (barSteps[2]) barSteps[2].classList.add('pulse-step');
         });
       }
 
@@ -807,8 +807,8 @@ I request that ${complaint.publisher} acknowledge this complaint and provide a w
       const buttons = document.querySelectorAll('.pdf-download-bar .pdf-download-btn');
       if (buttons[0]) buttons[0].classList.add('btn-used');
       document.querySelectorAll('.btn-step-number.pulse-step').forEach(el => el.classList.remove('pulse-step'));
-      const stepNums = document.querySelectorAll('.btn-step-number');
-      if (stepNums[1]) stepNums[1].classList.add('pulse-step');
+      const barSteps = document.querySelectorAll('.pdf-download-bar .btn-step-number');
+      if (barSteps[1]) barSteps[1].classList.add('pulse-step');
     };
     overlay.querySelector('.email-modal-close').addEventListener('click', closeModal);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });

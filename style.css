@@ -749,6 +749,9 @@ body {
   opacity: 0.35;
   pointer-events: none;
 }
+.pdf-download-btn.btn-used .pulse-step {
+  animation: none;
+}
 
 .search-hidden {
   display: none;
