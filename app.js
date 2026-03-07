@@ -120,7 +120,7 @@
         throw new Error('Failed to load complaint');
       }
       const html = await response.text();
-      const safeTitle = complaint.articleTitle.replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim();
+      const safeTitle = complaint.articleTitle.replace(/[\u2018\u2019\u201C\u201D]/g, "'").replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim();
       const complaintPdf = `downloads/${complaint.id}/Complaint_${safeTitle}.pdf`;
       contentArea.innerHTML = `
         <div class="pdf-download-bar">
@@ -508,7 +508,7 @@
       day: 'numeric', month: 'long', year: 'numeric'
     });
 
-    const safeTitle = complaint.articleTitle.replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim();
+    const safeTitle = complaint.articleTitle.replace(/[\u2018\u2019\u201C\u201D]/g, "'").replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim();
     const complaintUrl = `${SITE_BASE}/#${complaint.id}`;
 
     // Remove any existing modal
