@@ -618,7 +618,7 @@
         navigator.clipboard.writeText(copyValues[btn.dataset.field]).then(() => {
           btn.textContent = 'Copied!';
           btn.classList.add('copied');
-          if (window.umami) umami.track('filing-copy', { field: btn.dataset.field, complaint: complaint.id });
+          if (window.umami) umami.track('filing-copy-' + btn.dataset.field, { field: btn.dataset.field, complaint: complaint.id });
           setTimeout(() => {
             btn.textContent = 'Copy';
             btn.classList.remove('copied');
@@ -798,7 +798,7 @@ I request that ${complaint.publisher} acknowledge this complaint and provide a w
         navigator.clipboard.writeText(copyValues[btn.dataset.field]).then(() => {
           btn.textContent = 'Copied!';
           btn.classList.add('copied');
-          if (window.umami) umami.track('email-copy', { field: btn.dataset.field, complaint: complaint.id });
+          if (window.umami) umami.track('email-copy-' + btn.dataset.field, { field: btn.dataset.field, complaint: complaint.id });
           setTimeout(() => {
             btn.textContent = 'Copy';
             btn.classList.remove('copied');
