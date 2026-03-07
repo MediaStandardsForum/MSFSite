@@ -627,6 +627,13 @@
       });
     });
 
+    const pdfBtn = overlay.querySelector('.filing-download-btn');
+    if (pdfBtn) {
+      pdfBtn.addEventListener('click', () => {
+        if (window.umami) umami.track('filing-download-pdf', { complaint: id });
+      });
+    }
+
     const closeModal = () => overlay.remove();
     overlay.querySelector('.email-modal-close').addEventListener('click', closeModal);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
