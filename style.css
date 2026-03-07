@@ -635,10 +635,28 @@ body {
     transform: translateX(0);
   }
 
+  .site-header {
+    left: 0;
+  }
+
+  .site-header-bar {
+    padding: 0 1rem;
+    height: 80px;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .site-logo {
+    width: 36px;
+    height: 36px;
+  }
+
   .content {
     margin-left: 0;
+    margin-top: 82px;
     padding: 1rem;
-    padding-top: 4rem;
   }
 
   #content-area {
@@ -654,11 +672,20 @@ body {
   }
 
   .welcome {
-    padding: 2rem 1rem;
+    padding: 1rem 0;
   }
 
   .welcome h2 {
     font-size: 1.5rem;
+  }
+
+  .pdf-download-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pdf-download-btn {
+    justify-content: center;
   }
 }
 
