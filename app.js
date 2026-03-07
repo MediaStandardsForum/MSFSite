@@ -789,6 +789,17 @@ I request that ${complaint.publisher} acknowledge this complaint and provide a w
             <button class="email-copy-btn" data-field="body">Copy</button>
           </div>
         </div>
+        <hr class="notify-divider">
+        <div class="notify-section">
+          <p class="notify-intro">Optional: Let Media Standards Forum know you've sent this complaint.</p>
+          <div class="email-field">
+            <label>Your name</label>
+            <div class="email-field-row">
+              <input type="text" class="notify-name-input" placeholder="Enter your name">
+              <button class="notify-btn" disabled>Notify MSF</button>
+            </div>
+          </div>
+        </div>
       </div>
     `;
 
@@ -812,6 +823,25 @@ I request that ${complaint.publisher} acknowledge this complaint and provide a w
           }, 1500);
         });
       });
+    });
+
+    const nameInput = overlay.querySelector('.notify-name-input');
+    const notifyBtn = overlay.querySelector('.notify-btn');
+    nameInput.addEventListener('input', () => {
+      notifyBtn.disabled = !nameInput.value.trim();
+    });
+    notifyBtn.addEventListener('click', () => {
+      const name = nameInput.value.trim();
+      if (!name) return;
+      if (window.formbricks) {
+        formbricks.setAttribute('name', name);
+        formbricks.track('complaint-notification', { article: complaint.id, articleTitle: complaint.articleTitle });
+      }
+      if (window.umami) umami.track('notify-msf', { complaint: complaint.id, name: name });
+      notifyBtn.textContent = 'Sent!';
+      notifyBtn.classList.add('copied');
+      notifyBtn.disabled = true;
+      nameInput.disabled = true;
     });
 
     const closeModal = () => {
