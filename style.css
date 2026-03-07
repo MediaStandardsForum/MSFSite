@@ -448,6 +448,14 @@ body {
 }
 
 
+.complaint-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  font-family: var(--font-sans);
+}
+
 /* Complaint Article */
 .complaint {
   font-family: var(--font-sans);
@@ -687,6 +695,80 @@ body {
   .pdf-download-btn {
     justify-content: center;
   }
+}
+
+/* Sidebar CTA */
+.sidebar-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.sidebar-cta-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background-color: #1e3050;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  animation: number-pulse 2s ease-in-out infinite;
+}
+
+@keyframes number-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.sidebar-cta-text {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  color: #1e3050;
+}
+
+.sidebar-cta-number.faded,
+.sidebar-cta-text.faded {
+  opacity: 0.3;
+  animation: none;
+}
+
+/* Button step numbers */
+.btn-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1e3050;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+.btn-step-number.pulse-step {
+  animation: btn-pulse 2s ease-in-out infinite;
+}
+
+@keyframes btn-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.pdf-download-btn.btn-used {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.search-hidden {
+  display: none;
 }
 
 /* Overlay for mobile menu */
@@ -963,6 +1045,79 @@ body {
     background-color: #16a34a;
     border-color: #16a34a;
   }
+}
+
+/* Filing Modal */
+.filing-modal {
+  max-width: 650px;
+}
+
+.filing-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.filing-modal-header h2 {
+  margin: 0;
+}
+
+.filing-download-btn {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.filing-section {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filing-section:last-of-type {
+  border-bottom: none;
+}
+
+.filing-section h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+.filing-note {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.principles-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.principle-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--color-text);
+  cursor: default;
+}
+
+.principle-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1e3050;
+  cursor: default;
+}
+
+.principle-inactive {
+  opacity: 0.35;
 }
 
 /* Site Navigation */

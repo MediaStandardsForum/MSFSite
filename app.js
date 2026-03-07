@@ -11,6 +11,8 @@
   const contentArea = document.getElementById('content-area');
   const menuToggle = document.querySelector('.menu-toggle');
   const sidebar = document.querySelector('.sidebar');
+  const sidebarCta = document.getElementById('sidebar-cta');
+  const searchContainer = document.getElementById('search-container');
 
   // Initialize
   async function init() {
@@ -104,6 +106,11 @@
     currentComplaintId = id;
     updateActiveState();
 
+    // Show faded "Select" step, hide CTA
+    sidebarCta.innerHTML = `<div class="sidebar-cta"><span class="sidebar-cta-number faded">1</span><span class="sidebar-cta-text faded">Select</span></div>`;
+    sidebarCta.classList.remove('search-hidden');
+    searchContainer.classList.add('search-hidden');
+
     // Show loading state
     contentArea.innerHTML = '<div class="loading">Loading...</div>';
 
@@ -113,13 +120,28 @@
         throw new Error('Failed to load complaint');
       }
       const html = await response.text();
+      const safeTitle = complaint.articleTitle.replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim();
+      const complaintPdf = `downloads/${complaint.id}/Complaint_${safeTitle}.pdf`;
       contentArea.innerHTML = `
         <div class="pdf-download-bar">
-          <a href="downloads/${complaint.id}.zip" download class="pdf-download-btn"><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 1a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 10.586V2a1 1 0 0 1 1-1zM3 14a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg> Download Complaint Files and Instructions</a>
-          <button onclick="openEmailModal('${complaint.id}')" class="pdf-download-btn"><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z"/></svg> Email Complaint Notice Template</button>
+          <button onclick="openEmailModal('${complaint.id}')" class="pdf-download-btn"><span class="btn-step-number pulse-step">2</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z"/></svg> Email Notice to Publisher</button>
+          <a href="${encodeURI(complaintPdf)}" download class="pdf-download-btn"><span class="btn-step-number">3</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 1a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 10.586V2a1 1 0 0 1 1-1zM3 14a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg> Download Complaint</a>
+          <button onclick="printInstructions('${complaint.id}')" class="pdf-download-btn"><span class="btn-step-number">4</span><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M9 2a1 1 0 0 0 0 2h2a1 1 0 1 0 0-2H9zM4 5a2 2 0 0 1 2-2 3 3 0 0 0 3 3h2a3 3 0 0 0 3-3 2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5zm5.707 4.293a1 1 0 0 0-1.414 1.414L9.586 12l-1.293 1.293a1 1 0 1 0 1.414 1.414L11 13.414l1.293 1.293a1 1 0 0 0 1.414-1.414L12.414 12l1.293-1.293a1 1 0 0 0-1.414-1.414L11 10.586l-1.293-1.293z"/></svg> Filing Instructions</button>
         </div>
+        <h1 class="complaint-page-title">New Zealand Media Council Complaint</h1>
         ${html}
       `;
+
+      // Track download click — fade step 3, animate step 4
+      const downloadBtn = contentArea.querySelector('a.pdf-download-btn');
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+          downloadBtn.classList.add('btn-used');
+          document.querySelectorAll('.btn-step-number.pulse-step').forEach(el => el.classList.remove('pulse-step'));
+          const stepNums = document.querySelectorAll('.btn-step-number');
+          if (stepNums[2]) stepNums[2].classList.add('pulse-step');
+        });
+      }
 
       // Update page title
       document.title = `Media Standards Forum | ${complaint.articleTitle || complaint.title}`;
@@ -150,6 +172,10 @@
     currentComplaintId = null;
     updateActiveState();
     document.title = 'Media Standards Forum';
+
+    // Show CTA, hide search
+    sidebarCta.classList.remove('search-hidden');
+    searchContainer.classList.add('search-hidden');
     contentArea.innerHTML = `
       <div class="welcome">
         <div class="welcome-section">
@@ -170,22 +196,22 @@
             <div class="welcome-step">
               <span class="welcome-step-number">2</span>
               <div>
-                <strong>Download complaint files and instructions</strong>
-                <p>Use the <em>Download Complaint Files and Instructions</em> button to get the formal Notice of Complaint, the full complaint document, and step-by-step filing instructions.</p>
+                <strong>Email the publisher</strong>
+                <p>Use the <em>Email Complaint Notice Template</em> button to get a ready-made email you can copy and paste to notify the publisher. The Media Council requires you to contact the publisher first and allow 10 working days for a response.</p>
               </div>
             </div>
             <div class="welcome-step">
               <span class="welcome-step-number">3</span>
               <div>
-                <strong>Notify the publisher</strong>
-                <p>Use the <em>Email Complaint Notice Template</em> button to get a pre-written email you can send to the publisher. The Media Council requires you to contact the publisher first and allow 10 working days for a response.</p>
+                <strong>Download the complaint</strong>
+                <p>Use the <em>Download Complaint</em> button to get the formal complaint document to attach when filing with the Media Council.</p>
               </div>
             </div>
             <div class="welcome-step">
               <span class="welcome-step-number">4</span>
               <div>
                 <strong>File with the Media Council</strong>
-                <p>Once the publisher has responded (or 10 working days have passed), follow the filing instructions to submit your complaint to the <a href="https://www.mediacouncil.org.nz/complaints" target="_blank" rel="noopener">NZ Media Council</a>.</p>
+                <p>Once the publisher has responded (or 10 working days have passed), use the <em>Filing Instructions</em> button for step-by-step guidance on submitting your complaint to the <a href="https://www.mediacouncil.org.nz/complaints" target="_blank" rel="noopener">NZ Media Council</a>.</p>
               </div>
             </div>
           </div>
@@ -361,8 +387,12 @@
   // Handle initial route based on URL hash
   function handleInitialRoute() {
     const hash = window.location.hash.slice(1);
-    if (hash && complaints.some(c => c.id === hash)) {
-      loadComplaint(hash);
+    const id = hash.split('?')[0];
+    const openFiling = hash.includes('filing=true');
+    if (id && complaints.some(c => c.id === id)) {
+      loadComplaint(id).then(() => {
+        if (openFiling) printInstructions(id);
+      });
     } else {
       showWelcome();
     }
@@ -469,113 +499,136 @@
     const complaint = complaints.find(c => c.id === id);
     if (!complaint) return;
 
-    const principlesList = (complaint.tags || [])
-      .filter(t => PRINCIPLES[t])
-      .map(t => `<li>${PRINCIPLES[t]}</li>`)
-      .join('');
+    const activePrinciples = (complaint.tags || []).filter(t => PRINCIPLES[t]);
+    const principlesChecklist = activePrinciples.map(key => {
+      return `<label class="principle-checkbox"><input type="checkbox" checked disabled> ${PRINCIPLES[key]}</label>`;
+    }).join('');
 
     const pubDate = new Date(complaint.date).toLocaleDateString('en-NZ', {
       day: 'numeric', month: 'long', year: 'numeric'
     });
 
-    const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Complaint Filing Instructions — ${complaint.articleTitle}</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 11pt; color: #111; line-height: 1.6; max-width: 680px; margin: 2rem auto; padding: 0 1.5rem; }
-    h1 { font-size: 16pt; margin-bottom: 0.25rem; }
-    .subtitle { color: #555; font-size: 10pt; margin-bottom: 2rem; }
-    .warning { background: #fff7ed; border: 1px solid #f97316; border-radius: 4px; padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 10pt; color: #7c2d12; }
-    .checklist { background: #f5f5f5; border-left: 4px solid #2563eb; padding: 0.75rem 1rem; margin-bottom: 2rem; }
-    .checklist h2 { font-size: 11pt; margin: 0 0 0.5rem; }
-    .checklist ol { margin: 0; padding-left: 1.25rem; }
-    .checklist li { margin-bottom: 0.25rem; }
-    h2 { font-size: 12pt; border-bottom: 1px solid #ddd; padding-bottom: 0.25rem; margin-top: 1.75rem; margin-bottom: 0.75rem; }
-    .field-block { margin-bottom: 1rem; }
-    .field-label { font-weight: 700; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.03em; color: #333; }
-    .field-value { border: 1px solid #ccc; border-radius: 3px; padding: 0.4rem 0.6rem; margin-top: 0.2rem; background: #fafafa; font-size: 10pt; word-break: break-all; }
-    .field-value.multiline { min-height: 4rem; }
-    .note { font-size: 9pt; color: #666; font-style: italic; margin-top: 0.25rem; }
-    ul.principles { padding-left: 1.25rem; margin: 0; }
-    ul.principles li { margin-bottom: 0.2rem; }
-    @page { margin: 20mm; }
-    @media print { body { margin: 0; } }
-  </style>
-</head>
-<body>
-  <h1>Complaint Filing Instructions</h1>
-  <p class="subtitle">${complaint.articleTitle} — ${complaint.publisher}</p>
+    const safeTitle = complaint.articleTitle.replace(/[\\/:*?"<>|\ufffd]/g, '').replace(/\s+/g, ' ').trim();
+    const complaintUrl = `${SITE_BASE}/#${complaint.id}`;
 
-  <div class="warning">
-    <strong>Before you begin:</strong> You must have already sent your complaint to ${complaint.publisher} and received their response. The Media Council will not accept your complaint without this.
-  </div>
+    // Remove any existing modal
+    const existing = document.querySelector('.email-modal-overlay');
+    if (existing) existing.remove();
 
-  <div class="checklist">
-    <h2>Have these ready:</h2>
-    <ol>
-      <li>A link or copy of the article (provided below)</li>
-      <li>Your dated complaint sent to ${complaint.publisher}</li>
-      <li>The dated response from ${complaint.publisher}</li>
-      <li>Your outline of the complaint (provided below)</li>
-    </ol>
-  </div>
+    const overlay = document.createElement('div');
+    overlay.className = 'email-modal-overlay';
+    overlay.innerHTML = `
+      <div class="email-modal filing-modal">
+        <button class="email-modal-close">&times;</button>
+        <div class="filing-modal-header">
+          <h2>NZ Media Council Complaint Form Instructions</h2>
+          <a href="downloads/${complaint.id}/Instructions_${safeTitle}.pdf" download class="email-copy-btn filing-download-btn"><svg class="download-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10 1a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L9 10.586V2a1 1 0 0 1 1-1zM3 14a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1z"/></svg> PDF</a>
+        </div>
+        <p class="email-modal-intro">Follow these steps on the <a href="https://www.mediacouncil.org.nz/complaints" target="_blank" rel="noopener">NZ Media Council complaint form</a>. Copy each field as needed.</p>
 
-  <h2>Part 1 — Complaints Procedure</h2>
-  <p>Read the procedure in full and tick both declarations, then click <strong>Register Your Details</strong>.</p>
+        <div class="filing-section">
+          <h3>Before you begin</h3>
+          <p class="filing-note">You must have already emailed your complaint to ${complaint.publisher} and allowed 10 working days for a response.</p>
+          <p class="filing-note"><strong>Have your email client open with the notice you sent and the response from ${complaint.publisher} ready to copy or upload.</strong></p>
+        </div>
 
-  <h2>Part 2 — Personal Details</h2>
-  <p>Enter your name, email address, and phone number (required). Address fields are optional. Click <strong>Lodge Complaint</strong>.</p>
+        <div class="filing-section">
+          <h3>Part 1 — Complaints Procedure</h3>
+          <p class="filing-note">Read the procedure, tick both declarations, then click <strong>Register Your Details</strong>.</p>
+        </div>
 
-  <h2>Step 1 — Publication Details</h2>
-  <div class="field-block">
-    <div class="field-label">The Publisher</div>
-    <div class="field-value">${complaint.publisher}</div>
-  </div>
-  <div class="field-block">
-    <div class="field-label">Link to the Article</div>
-    <div class="field-value">${complaint.articleUrl || ''}</div>
-  </div>
-  <div class="field-block">
-    <div class="field-label">Publication Date</div>
-    <div class="field-value">${pubDate}</div>
-  </div>
+        <div class="filing-section">
+          <h3>Part 2 — Personal Details</h3>
+          <p class="filing-note">Enter your name, email, and phone number. Click <strong>Lodge Complaint</strong>.</p>
+        </div>
 
-  <h2>Step 2 — Your Complaint to the Publisher</h2>
-  <p>Upload your dated complaint email to ${complaint.publisher}, or paste the text below. <strong>It must be dated.</strong></p>
-  <div class="field-block">
-    <div class="field-value multiline"></div>
-    <p class="note">Paste or upload your complaint to the publisher here.</p>
-  </div>
+        <div class="filing-section">
+          <h3>Step 1 — Publication Details</h3>
+          <div class="email-field">
+            <label>The Publisher</label>
+            <div class="email-field-row">
+              <input type="text" readonly value="${complaint.publisher}">
+              <button class="email-copy-btn" data-field="publisher">Copy</button>
+            </div>
+          </div>
+          <div class="email-field">
+            <label>Link to the Article</label>
+            <div class="email-field-row">
+              <input type="text" readonly value="${complaint.articleUrl || ''}">
+              <button class="email-copy-btn" data-field="articleUrl">Copy</button>
+            </div>
+          </div>
+          <div class="email-field">
+            <label>Publication Date</label>
+            <div class="email-field-row">
+              <input type="text" readonly value="${pubDate}">
+              <button class="email-copy-btn" data-field="pubDate">Copy</button>
+            </div>
+          </div>
+        </div>
 
-  <h2>Step 3 — The Publisher's Response</h2>
-  <p>Upload or paste ${complaint.publisher}'s dated response to your complaint.</p>
-  <div class="field-block">
-    <div class="field-value multiline"></div>
-    <p class="note">Paste or upload the publisher's response here.</p>
-  </div>
+        <div class="filing-section">
+          <h3>Step 2 — Your Complaint to the Publisher</h3>
+          <p class="filing-note">Upload or paste your dated complaint email to ${complaint.publisher}.</p>
+        </div>
 
-  <h2>Step 4 — Reason for Your Complaint</h2>
-  <p>Copy and paste the complaint text from the Media Standards Forum article into this field, or upload the PDF.</p>
-  <div class="field-block">
-    <div class="field-value multiline"></div>
-    <p class="note">Use the "Download PDF" button on the complaint page to get a copy of the full complaint text.</p>
-  </div>
+        <div class="filing-section">
+          <h3>Step 3 — The Publisher's Response</h3>
+          <p class="filing-note">Upload or paste ${complaint.publisher}'s response. If no response was received, state that 10 working days have passed.</p>
+        </div>
 
-  <h2>Step 5 — Principles Breached</h2>
-  <p>Tick the following principles on the form:</p>
-  <ul class="principles">${principlesList}</ul>
+        <div class="filing-section">
+          <h3>Step 4 — Reason for Your Complaint</h3>
+          <p class="filing-note">Upload the complaint PDF you downloaded in step 3, or paste the complaint URL below.</p>
+          <div class="email-field">
+            <label>Complaint URL</label>
+            <div class="email-field-row">
+              <input type="text" readonly value="${complaintUrl}">
+              <button class="email-copy-btn" data-field="complaintUrl">Copy</button>
+            </div>
+          </div>
+        </div>
 
-  <p style="margin-top:2rem; font-size:9pt; color:#666;">Click <strong>Submit</strong> on the Media Council form. If uploading files, allow several minutes for the form to submit.</p>
-</body>
-</html>`;
+        <div class="filing-section">
+          <h3>Step 5 — Principles Breached</h3>
+          <p class="filing-note">Tick the following principles on the Media Council form:</p>
+          <div class="principles-checklist">
+            ${principlesChecklist}
+          </div>
+        </div>
 
-    const win = window.open('', '_blank');
-    win.document.write(html);
-    win.document.close();
-    win.focus();
-    win.print();
+        <p class="filing-note" style="margin-top:1rem;">Click <strong>Submit</strong> on the Media Council form.</p>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const copyValues = {
+      publisher: complaint.publisher,
+      articleUrl: complaint.articleUrl || '',
+      pubDate: pubDate,
+      complaintUrl: complaintUrl,
+    };
+
+    overlay.querySelectorAll('.email-copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(copyValues[btn.dataset.field]).then(() => {
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy';
+            btn.classList.remove('copied');
+          }, 1500);
+        });
+      });
+    });
+
+    const closeModal = () => overlay.remove();
+    overlay.querySelector('.email-modal-close').addEventListener('click', closeModal);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+    document.addEventListener('keydown', function handler(e) {
+      if (e.key === 'Escape') { closeModal(); document.removeEventListener('keydown', handler); }
+    });
   }
 
 
@@ -747,7 +800,15 @@ I request that Crux News acknowledge this complaint and provide a written respon
       });
     });
 
-    const closeModal = () => overlay.remove();
+    const closeModal = () => {
+      overlay.remove();
+      // Fade the email button and move animation to step 3
+      const buttons = document.querySelectorAll('.pdf-download-bar .pdf-download-btn');
+      if (buttons[0]) buttons[0].classList.add('btn-used');
+      document.querySelectorAll('.btn-step-number.pulse-step').forEach(el => el.classList.remove('pulse-step'));
+      const stepNums = document.querySelectorAll('.btn-step-number');
+      if (stepNums[1]) stepNums[1].classList.add('pulse-step');
+    };
     overlay.querySelector('.email-modal-close').addEventListener('click', closeModal);
     overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', function handler(e) {
