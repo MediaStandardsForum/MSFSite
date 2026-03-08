@@ -1,0 +1,15 @@
+# Dev tools & scripts
+tools/
+analytics/
+archive/
+node_modules/
+.venv/
+__pycache__/
+.claude/
+
+# Input files
+Complaint Docx/
+*.docx
+
+# Config & secrets
+.env
